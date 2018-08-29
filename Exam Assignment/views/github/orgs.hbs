@@ -1,0 +1,12 @@
+<h3>Select Organizations</h3>
+
+<form class="" action="/orgs" method="post">
+<!-- TODO: show pics and choose instead of dropdown? -->
+    <select id="org" name="org">
+        {{#each orgs}}
+        <option value="{{this}}">{{this}}</option>
+        {{/each}}
+    </select>
+    <br>
+    <button class="btn btn-primary">Select</button>
+</form>

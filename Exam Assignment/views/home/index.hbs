@@ -1,0 +1,23 @@
+{{#unless user}}
+<h3>Welcome, please log in!</h3>
+{{/unless}} 
+{{#if user}}
+<div class="pull-left" id="account">
+    <h4><strong>{{user.username}}</strong></h4>
+    <img class="img-rounded" src="{{user._json.avatar_url}}">
+</div>
+
+<div class="pull-right" id="notifications">
+    <h3>Notifications</h3>
+    <ul id="messages">
+        {{#each messages}}
+        <li>
+            {{message}}
+            <br>
+            {{date}}
+        </li>
+        {{/each}}
+    </ul>
+    <a class="btn btn-danger" href="/remove">Remove</a>
+</div>
+{{/if}}

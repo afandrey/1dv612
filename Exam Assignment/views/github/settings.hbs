@@ -1,0 +1,57 @@
+<div class="pull-left" id="settings">
+    <h3>Email Notification Settings</h3>
+    {{#each settings}}
+    <strong>Change settings for: {{org}}</strong>
+    <form class="" action="/settings" method="post">
+    <div>Choose events:</div>
+    <input type="checkbox" name="events" value="issues">issues
+    <input type="checkbox" name="events" value="push">push
+    <input type="checkbox" name="events" value="release">release
+    <input type="checkbox" name="events" value="repository">repository
+    <button class="btn btn-primary">Change</button>
+    </form>
+    {{#if notify}}
+    <form class="" action="/settings" method="post">
+        <div>Email Notifications:</div>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="true" checked="checked">On
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="false">Off
+        </label>
+        <button class="btn btn-primary">Change</button>
+    </form>
+    {{/if}} 
+    {{#unless notify}} 
+    <form class="" action="/settings" method="post">
+        <div>Email Notifications:</div>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="true">On
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="false" checked="checked">Off
+        </label>
+        <button class="btn btn-primary">Change</button>
+    </form>
+    {{/unless}} 
+    <br>
+    <a class="btn btn-danger" href="/delete/{{id}}">Delete Webhook</a>    
+    {{/each}}
+</div>
+
+{{#if user}}
+<div class="pull-right" id="account">
+    <h4>
+        <strong>{{user.username}}</strong>
+    </h4>
+    <img class="img-rounded" src="{{user._json.avatar_url}}">
+    <h2>{{user.displayName}}
+        <h2>
+            <p class="info">{{user._json.bio}}</p>
+            <a href="{{user.profileUrl}}">
+                <i class="fa fa-github"></i>
+            </a>
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-twitter"></i>
+</div>
+{{/if}}
