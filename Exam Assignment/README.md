@@ -1,8 +1,4 @@
-# Exam Assignment, 1dv612
-
-Application is deployed on [Digital Ocean](https://138.68.160.157/)
-
-OBS!! Email notifikationerna bör fungera, men när jag skulle testa innan inlämning så fick jag "Invalid Login", fast det fungerat innan.
+﻿# Exam Assignment, 1dv612
 
 ## How To:
 1. Börja med att skapa en OAuth app och uppdatera .env med Client ID och Client Secret.
